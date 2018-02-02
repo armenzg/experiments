@@ -1,19 +1,19 @@
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import App from './App';
+import Routes from './routes';
 
 const root = document.getElementById('root');
 const load = () => render(
   (
     <AppContainer>
-      <App />
+      <Routes />
     </AppContainer>
   ), root,
 );
 
 // This is needed for Hot Module Replacement
 if (module.hot) {
-  module.hot.accept('./App', load);
+  module.hot.accept('./routes', load);
 }
 
 load();
