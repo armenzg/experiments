@@ -1,16 +1,25 @@
-import { Component } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
 
-export default class App extends Component {
-  state = {
-    name: 'neutrino_experiments',
-  };
+const App = () => (
+  <div className="App">
+    <h1>Welcome to our app!</h1>
+  </div>
+);
 
-  render() {
-    return (
-      <div className="App">
-        <h1>Welcome to {this.state.name}</h1>
-      </div>
-    );
-  }
-}
+const AppContainer = () => (
+  <Router>
+    <div>
+      <ul>
+        <li>
+          <Link href="/" to="/">App</Link>
+        </li>
+      </ul>
+      <hr />
+      <Route exact path="/" component={App} />
+    </div>
+  </Router>
+);
+
+export default AppContainer;
